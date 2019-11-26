@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "HaasGrotesk";
+  src: url("../static/fonts/NeueHaasGrotText-55Roman-Web.woff2") format("woff2"),
+    url("../static/fonts/NeueHaasGrotText-55Roman-Web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.HaasGrotesk-55Roman {
+  font-family: "HaasGrotesk";
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "HaasGrotesk";
+  src: url("../static/fonts/NeueHaasGrotText-75Bold-Web.woff2") format("woff2"),
+    url("../static/fonts/NeueHaasGrotText-75Bold-Web.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.HaasGrotesk-75Bold {
+  font-family: "HaasGrotesk";
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "HaasGrotesk";
+  src: url("../static/fonts/NeueHaasGrotDisp-95Black-Web.woff2") format("woff2"),
+    url("../static/fonts/NeueHaasGrotDisp-95Black-Web.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.HaasGrotesk-95Black {
+  font-family: "HaasGrotesk";
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
