@@ -6,6 +6,7 @@ export const Box = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto 1fr;
   grid-column-gap: var(--column-gap);
+  grid-auto-flow: column;
 
   margin: auto;
   padding: 0 var(--column-gap);

@@ -67,3 +67,9 @@ h1 {
   line-height: var(--h1-height);
   font-weight: 900;
 }
+
+@media (max-width: 640px) {
+  :root {
+    --h1-size: var(--h1-size-sm);
+  }
+}
