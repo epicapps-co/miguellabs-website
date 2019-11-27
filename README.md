@@ -1,5 +1,7 @@
 # MM+ Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e70ba002-ca17-42d6-9e06-b3183a01bda4/deploy-status)](https://app.netlify.com/sites/mm-plus/deploys)
+
 MM+ Marketing Website with [Gatsby](https://www.gatsbyjs.org)
 
 ## 🚀 Quick start
