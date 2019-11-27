@@ -18,7 +18,7 @@ const Image = () => {
         nodes {
           childImageSharp {
             fluid(maxWidth: 2880, maxHeight: 2000, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
@@ -34,8 +34,7 @@ const Image = () => {
       <Img
         style={{ height: "100%" }}
         fluid={fluidImage}
-        loading="eager"
-        alt="Cover image"
+        alt="MM+ cover image"
       />
     </Container>
   )
