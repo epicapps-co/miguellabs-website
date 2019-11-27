@@ -6,12 +6,14 @@
   --background-color: #fafafa;
 
   --max-width: 65.625rem;
-  --column-margin: 0.938rem;
+  --column-gap-sm: 0.938rem;
+  --column-gap: 1.875rem;
 
   --section-height: 100vh;
 
   --h1-size: 6.875rem;
-  --h1-height: 6.875rem;
+  --h1-size-sm: 4rem;
+  --h1-height: 0.9;
 
   --h2-size: 1.625rem;
   --h3-size: 1.375rem;
