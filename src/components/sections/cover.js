@@ -14,6 +14,18 @@ S.Section = styled.section`
   height: var(--section-height);
   width: 100%;
   z-index: -1;
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    height: 50px;
+    width: 4px;
+    margin-left: -2px;
+    background-color: var(--background-color);
+  }
 `
 S.Logo = styled(Logo)`
   grid-column: 1 / 3;
