@@ -11,7 +11,7 @@ const Container = styled.div`
   z-index: -1;
 `
 
-const Image = () => {
+const CoverImage = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { absolutePath: { regex: "/cover//" } }) {
@@ -40,4 +40,4 @@ const Image = () => {
   )
 }
 
-export default Image
+export default CoverImage

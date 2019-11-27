@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Image from "./image"
+import CoverImage from "./cover-image"
 import Text from "../helpers/text"
 import Logo from "../../static/svg/logo.svg"
 
@@ -37,7 +37,7 @@ S.Text = styled(Text)`
 const Cover = () => {
   return (
     <S.Section>
-      <Image />
+      <CoverImage />
       <Box>
         <S.Logo />
         <S.Text title="cover"></S.Text>
