@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Text = ({ title }) => {
+const Text = ({ className, title }) => {
   const {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(
@@ -23,9 +23,7 @@ const Text = ({ title }) => {
   const { html } = nodes[index]
 
   return (
-    <>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </>
+    <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
   )
 }
 
