@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 const Container = styled.div`
   position: absolute;
+  background-color: black;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -30,7 +31,12 @@ const Image = () => {
 
   return (
     <Container>
-      <Img style={{ height: "100%" }} fluid={fluidImage} alt="Cover" />
+      <Img
+        style={{ height: "100%" }}
+        fluid={fluidImage}
+        loading="eager"
+        alt="Cover image"
+      />
     </Container>
   )
 }
