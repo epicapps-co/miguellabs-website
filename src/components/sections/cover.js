@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Image from "./image"
+import CoverImage from "./cover-image"
 import Text from "../helpers/text"
 import Logo from "../../static/svg/logo.svg"
 
@@ -13,37 +13,43 @@ S.Section = styled.section`
   position: fixed;
   height: var(--section-height);
   width: 100%;
-  z-index: 0;
+  z-index: -1;
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    height: 50px;
+    width: 4px;
+    margin-left: -2px;
+    background-color: var(--background-color);
+  }
 `
 S.Logo = styled(Logo)`
   grid-column: 1 / 3;
-  grid-row-start: 1 / 2;
   align-self: start;
   width: 100%;
   height: auto;
 `
 S.Text = styled(Text)`
   grid-column: 1 / 6;
-  grid-row: 2 / 3;
   align-self: center;
 
   h1 {
-    color: var(--white-color);
+    color: var(--light-color);
   }
 
   @media (max-width: ${sizes.sm}) {
     grid-column: 1 / 4;
-
-    h1 {
-      font-size: var(--h1-size-sm);
-    }
   }
 `
 
 const Cover = () => {
   return (
     <S.Section>
-      <Image />
+      <CoverImage />
       <Box>
         <S.Logo />
         <S.Text title="cover"></S.Text>

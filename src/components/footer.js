@@ -6,7 +6,7 @@ import sizes from "../global/sizes"
 
 const S = {}
 S.Footer = styled.footer`
-  background-color: var(--primary-light-color);
+  background-color: var(--background-color);
 `
 S.Container = styled.div`
   margin: auto;

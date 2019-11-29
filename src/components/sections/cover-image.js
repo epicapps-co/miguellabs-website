@@ -5,19 +5,20 @@ import styled from "styled-components"
 
 const Container = styled.div`
   position: absolute;
+  background-color: black;
   height: 100%;
   width: 100%;
   z-index: -1;
 `
 
-const Image = () => {
+const CoverImage = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { absolutePath: { regex: "/cover//" } }) {
         nodes {
           childImageSharp {
             fluid(maxWidth: 2880, maxHeight: 2000, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
@@ -30,9 +31,13 @@ const Image = () => {
 
   return (
     <Container>
-      <Img style={{ height: "100%" }} fluid={fluidImage} alt="Cover" />
+      <Img
+        style={{ height: "100%" }}
+        fluid={fluidImage}
+        alt="MM+ cover image"
+      />
     </Container>
   )
 }
 
-export default Image
+export default CoverImage
