@@ -26,6 +26,7 @@ S.Text = styled(Text)`
 `
 S.Tagline1 = styled(S.Text)`
   grid-row: 2/3;
+
   span {
     color: var(--primary-color);
     margin: -0.25em;
