@@ -24,14 +24,15 @@ S.Text = styled(Text)`
   min-width: 0;
   min-height: 0;
 `
-S.TextTop = styled(S.Text)`
+S.Tagline1 = styled(S.Text)`
   grid-row: 2/3;
+
   span {
     color: var(--primary-color);
     margin: -0.25em;
   }
 `
-S.TextBottom = styled(S.Text)`
+S.Tagline2 = styled(S.Text)`
   grid-row: 4/5;
   color: var(--primary-color);
 `
@@ -40,8 +41,8 @@ const Taglines = () => {
   return (
     <S.Section>
       <S.Box>
-        <S.TextTop title="tagline-1"></S.TextTop>
-        <S.TextBottom title="tagline-2"></S.TextBottom>
+        <S.Tagline1 title="tagline-1"></S.Tagline1>
+        <S.Tagline2 title="tagline-2"></S.Tagline2>
       </S.Box>
     </S.Section>
   )
