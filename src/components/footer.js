@@ -7,11 +7,24 @@ import sizes from "../global/sizes"
 
 const S = {}
 S.Footer = styled.footer`
+  position: relative;
   background-color: var(--darker-color);
   color: var(--light-color);
 
   a {
     color: var(--light-color);
+  }
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    height: 50px;
+    width: 4px;
+    margin-left: -2px;
+    background-color: var(--darker-color);
   }
 `
 S.Box = styled(Box)`
