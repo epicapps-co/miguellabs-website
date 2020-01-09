@@ -27,23 +27,14 @@ S.Section = styled.section`
     margin-left: -2px;
     border-left: 4px dashed var(--light-color);
     opacity: 0.2;
-
-    @media (max-width: ${sizes.lg}) {
-      visibility: hidden;
-    }
   }
 `
 S.Box = styled(Box)`
   grid-template-rows: repeat(3, var(--space-between) auto) var(--space-between);
 
   @media (max-width: ${sizes.lg}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: ${sizes.sm}) {
-    grid-template-rows: repeat(3, var(--space-between-icons) auto) var(
-        --space-between-icons
-      );
+    --space-between: 60vh;
+    grid-template-columns: 1fr;
   }
 `
 S.Text = styled(Text)`
@@ -53,27 +44,18 @@ S.Text = styled(Text)`
   &.left {
     grid-column: 1/3;
     text-align: right;
-
-    @media (max-width: ${sizes.lg}) {
-      grid-column: 1/3;
-    }
-
-    @media (max-width: ${sizes.sm}) {
-      text-align: left;
-      grid-column: 1/4;
-    }
   }
 
   &.right {
     grid-column: 4/6;
     text-align: left;
+  }
 
-    @media (max-width: ${sizes.lg}) {
-      grid-column: 2/4;
-    }
-
-    @media (max-width: ${sizes.sm}) {
-      grid-column: 1/4;
+  @media (max-width: ${sizes.lg}) {
+    &.left,
+    &.right {
+      text-align: center;
+      grid-column: 1/2;
     }
   }
 `
@@ -87,31 +69,14 @@ S.Icon = styled.div`
     position: absolute;
     z-index: 10;
     transform: translate(0, -5px);
+  }
 
-    @media (max-width: ${sizes.sm}) {
+  @media (max-width: ${sizes.lg}) {
+    justify-self: center;
+    grid-column: 1/2;
+
+    & > div {
       transform: translate(0, -200px);
-    }
-  }
-
-  &.left {
-    @media (max-width: ${sizes.lg}) {
-      grid-column: 3/4;
-    }
-
-    @media (max-width: ${sizes.sm}) {
-      justify-self: left;
-      grid-column: 1/4;
-    }
-  }
-
-  &.right {
-    @media (max-width: ${sizes.lg}) {
-      grid-column: 1/2;
-    }
-
-    @media (max-width: ${sizes.sm}) {
-      justify-self: left;
-      grid-column: 1/4;
     }
   }
 `
@@ -121,7 +86,7 @@ S.Text1 = styled(S.Text)`
 S.Icon1 = styled(S.Icon)`
   grid-row: 2/3;
 
-  @media (max-width: ${sizes.sm}) {
+  @media (max-width: ${sizes.lg}) {
     & > div {
       transform: translate(-10px, -200px);
     }

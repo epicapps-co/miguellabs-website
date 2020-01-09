@@ -6,11 +6,11 @@
   --background-color: #fafafa;
 
   --max-width: 65.625rem;
+
   --column-gap-sm: 0.938rem;
   --column-gap: 1.875rem;
-  --space-between: 40vh;
-  --space-between-icons: 70vh;
 
+  --space-between: 40vh;
   --section-height: 100vh;
 
   --h1-size: 6.25rem;
