@@ -7,11 +7,14 @@ import Text from "../helpers/text"
 import { Box } from "../styled"
 
 import sizes from "../../global/sizes"
+import sectionTriangle from "../../static/svg/section-triangle.svg"
 
 const S = {}
 S.Section = styled.section`
   position: relative;
   background-color: var(--background-color);
+  background-image: url(${sectionTriangle});
+  background-size: 100% 100%;
 
   ::before {
     content: "";
