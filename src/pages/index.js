@@ -6,6 +6,7 @@ import Cover from "../components/sections/cover"
 import Taglines from "../components/sections/taglines"
 import Spacer from "../components/helpers/spacer"
 import Services from "../components/sections/services"
+import Work from "../components/sections/work"
 
 export default function IndexPage() {
   return (
@@ -15,6 +16,7 @@ export default function IndexPage() {
       <Spacer />
       <Taglines />
       <Services />
+      <Work />
     </Layout>
   )
 }

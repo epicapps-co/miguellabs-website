@@ -27,13 +27,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `cover`,
-        path: `${__dirname}/src/static/cover`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/static/content`,
       },

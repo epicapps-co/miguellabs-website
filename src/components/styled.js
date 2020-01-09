@@ -4,7 +4,7 @@ import sizes from "../global/sizes"
 export const Box = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   grid-column-gap: var(--column-gap);
   grid-auto-flow: column;
 

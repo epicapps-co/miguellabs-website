@@ -27,6 +27,9 @@ S.Section = styled.section`
     background-color: var(--background-color);
   }
 `
+S.Box = styled(Box)`
+  grid-template-rows: auto 1fr;
+`
 S.Logo = styled(Logo)`
   grid-column: 1 / 3;
   align-self: start;
@@ -50,10 +53,10 @@ const Cover = () => {
   return (
     <S.Section>
       <CoverImage />
-      <Box>
+      <S.Box>
         <S.Logo />
         <S.Text title="cover"></S.Text>
-      </Box>
+      </S.Box>
     </S.Section>
   )
 }

@@ -8,7 +8,20 @@ import sizes from "../../global/sizes"
 
 const S = {}
 S.Section = styled.section`
+  position: relative;
   background-color: var(--background-color);
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    height: 50px;
+    width: 4px;
+    margin-left: -2px;
+    background-color: var(--primary-color);
+  }
 `
 S.Box = styled(Box)`
   grid-template-columns: 1fr;
