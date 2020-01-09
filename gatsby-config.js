@@ -14,7 +14,7 @@ module.exports = {
         background_color: `#FAFAFA`,
         theme_color: `#DD2222`,
         display: `minimal-ui`,
-        icon: `src/static/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/static/images/mmplus-icon.png`,
       },
     },
     {
@@ -27,23 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `cover`,
-        path: `${__dirname}/src/static/cover`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/static/content`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /svg/,
-        },
       },
     },
     `gatsby-plugin-styled-components`,
@@ -53,6 +38,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 }

@@ -14,7 +14,7 @@ const Container = styled.div`
 const CoverImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { absolutePath: { regex: "/cover//" } }) {
+      allFile(filter: { relativePath: { regex: "/cover-/" } }) {
         nodes {
           childImageSharp {
             fluid(maxWidth: 2880, maxHeight: 2000, quality: 100) {
