@@ -14,7 +14,7 @@ module.exports = {
         background_color: `#FAFAFA`,
         theme_color: `#DD2222`,
         display: `minimal-ui`,
-        icon: `src/static/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/static/images/mmplus-icon.png`,
       },
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /svg/,
+          include: /\.comp\.svg$/,
         },
       },
     },

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import CoverImage from "./cover-image"
 import Text from "../helpers/text"
-import Logo from "../../static/svg/logo.svg"
+import Logo from "../../static/svg/logo.comp.svg"
 
 import sizes from "../../global/sizes"
 import { Box } from "../styled"
