@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 import CoverImage from "./cover-image"
 import Text from "../helpers/text"
-import Logo from "../../static/svg/logo.comp.svg"
+
+import logo from "../../static/svg/logo.svg"
 
 import sizes from "../../global/sizes"
 import { Box } from "../styled"
@@ -30,7 +31,7 @@ S.Section = styled.section`
 S.Box = styled(Box)`
   grid-template-rows: auto 1fr;
 `
-S.Logo = styled(Logo)`
+S.Logo = styled.img`
   grid-column: 1 / 3;
   align-self: start;
   width: 100%;
@@ -54,7 +55,7 @@ const Cover = () => {
     <S.Section>
       <CoverImage />
       <S.Box>
-        <S.Logo />
+        <S.Logo src={logo} />
         <S.Text title="cover"></S.Text>
       </S.Box>
     </S.Section>
