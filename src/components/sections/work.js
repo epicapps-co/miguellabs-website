@@ -13,7 +13,7 @@ S.Section = styled.section`
   position: relative;
   background-color: var(--background-color);
 
-  ::after {
+  ::before {
     content: "";
     display: block;
     position: absolute;
@@ -24,8 +24,22 @@ S.Section = styled.section`
     margin-left: -2px;
     background-color: var(--primary-color);
   }
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    height: 50px;
+    width: 4px;
+    margin-left: -2px;
+    background-color: var(--darker-color);
+  }
 `
 S.Box = styled(Box)`
+  grid-template-rows: 10vh auto 10vh;
+
   @media (max-width: ${sizes.sm}) {
     grid-template-columns: 1fr;
     grid-template-rows: var(--space-between) auto auto var(--space-between);
@@ -38,6 +52,7 @@ S.Text = styled(Text)`
 `
 S.Title = styled(S.Text)`
   grid-column: 1/4;
+  grid-row: 2/3;
 
   h2 {
     color: var(--primary-color);
@@ -45,12 +60,12 @@ S.Title = styled(S.Text)`
 
   @media (max-width: ${sizes.sm}) {
     grid-column: 1/2;
-    grid-row: 2/3;
   }
 `
 
 S.ImgContainer = styled.div`
   grid-column: 4/6;
+  grid-row: 2/3;
   align-self: center;
 
   @media (max-width: ${sizes.sm}) {
