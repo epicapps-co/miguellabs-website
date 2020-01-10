@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
 
   const schemaOrgJSONLD = {
     "@context": "https://schema.org",
-    "@type": "Company",
+    "@type": "Organization",
     url: m.url,
     name: m.name,
     legalName: m.legalName,
