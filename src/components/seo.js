@@ -11,7 +11,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,19 +19,57 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
+            image
+            email
+            phone
+            name
+            legalName
+            streetAddress
+            addressLocality
+            addressRegion
+            postalCode
+          }
+        }
+        file(relativePath: { eq: "social-hero.png" }) {
+          childImageSharp {
+            fixed(width: 1200) {
+              src
+            }
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaTitle = title || site.siteMetadata.title
-  const titleTemplate = title ? `%s | ${site.siteMetadata.title}` : `%s`
+  const m = data.site.siteMetadata
+
+  const metaTitle = title || m.title
+  const metaDescription = description || m.description
+  const titleTemplate = title ? `%s | ${m.title}` : `%s`
+  const metaUrl = m.url
+
+  const metaImage = `${m.url}${data.file.childImageSharp.fixed.src}`
+
+  const schemaOrgJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    url: m.url,
+    name: m.name,
+    legalName: m.legalName,
+    description: m.description,
+    email: m.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: m.phone,
+      contactType: "Customer Support",
+    },
+  }
 
   return (
     <HelmetProvider>
       <Helmet
+        defer={false}
         htmlAttributes={{
           lang,
         }}
@@ -39,8 +77,20 @@ function SEO({ description, lang, meta, title }) {
         titleTemplate={titleTemplate}
         meta={[
           {
+            name: `title`,
+            content: metaTitle,
+          },
+          {
             name: `description`,
             content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            property: `og:url`,
+            content: metaUrl,
           },
           {
             property: `og:title`,
@@ -51,27 +101,35 @@ function SEO({ description, lang, meta, title }) {
             content: metaDescription,
           },
           {
-            property: `og:type`,
-            content: `website`,
+            property: `og:image`,
+            content: metaImage,
           },
           {
             name: `twitter:card`,
-            content: `summary`,
+            content: `summary_large_image`,
           },
           {
-            name: `twitter:creator`,
-            content: site.siteMetadata.author,
+            name: `twitter:url`,
+            content: metaUrl,
           },
           {
             name: `twitter:title`,
-            content: title,
+            content: metaTitle,
           },
           {
             name: `twitter:description`,
             content: metaDescription,
           },
+          {
+            name: `twitter:image`,
+            content: metaImage,
+          },
         ].concat(meta)}
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
+      </Helmet>
     </HelmetProvider>
   )
 }

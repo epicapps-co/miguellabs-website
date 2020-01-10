@@ -82,8 +82,20 @@ h4 {
   font-weight: 400;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 369px) {
   :root {
-    --h1-size: var(--h1-size-sm);
+    --h1-size: 3.25rem;
+    --h2-size: 2.5rem;
+    --h3-size: 1.5rem;
+    --h4-size: 1rem;
+  }
+}
+
+@media (min-width: 370px) and (max-width: 640px) {
+  :root {
+    --h1-size: 4rem;
+    --h2-size: 3.25rem;
+    --h3-size: 2.5rem;
+    --h4-size: 1.25rem;
   }
 }
