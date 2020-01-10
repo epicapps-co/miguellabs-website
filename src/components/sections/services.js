@@ -5,9 +5,9 @@ import Text from "../helpers/text"
 import { Box } from "../styled"
 import sizes from "../../global/sizes"
 
-import iconSearch from "../../static/icons/search.svg"
-import iconChat from "../../static/icons/chat.svg"
-import iconCode from "../../static/icons/code.svg"
+import iconSearch from "../../assets/svg/search.svg"
+import iconChat from "../../assets/svg/chat.svg"
+import iconCode from "../../assets/svg/code.svg"
 
 const S = {}
 S.Section = styled.section`

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import CoverImage from "./cover-image"
 import Text from "../helpers/text"
 
-import logo from "../../static/svg/logo.svg"
+import logo from "../../assets/svg/logo.svg"
 
 import sizes from "../../global/sizes"
 import { Box } from "../styled"
@@ -55,7 +55,7 @@ const Cover = () => {
     <S.Section>
       <CoverImage />
       <S.Box>
-        <S.Logo src={logo} />
+        <S.Logo src={logo} alt="MM+ logo" />
         <S.Text title="cover"></S.Text>
       </S.Box>
     </S.Section>

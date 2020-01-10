@@ -7,7 +7,7 @@ import Text from "../helpers/text"
 import { Box } from "../styled"
 
 import sizes from "../../global/sizes"
-import sectionTriangle from "../../static/svg/section-triangle.svg"
+import sectionTriangle from "../../assets/svg/section-triangle.svg"
 
 const S = {}
 S.Section = styled.section`

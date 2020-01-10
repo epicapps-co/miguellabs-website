@@ -11,7 +11,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,19 +19,27 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
+            image
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaTitle = title || site.siteMetadata.title
-  const titleTemplate = title ? `%s | ${site.siteMetadata.title}` : `%s`
+  const siteMetadata = data.site.siteMetadata
+
+  const metaTitle = title || siteMetadata.title
+  const metaDescription = description || siteMetadata.description
+  const metaUrl = siteMetadata.url
+  const metaImage = `${siteMetadata.url}${siteMetadata.image}`
+
+  const titleTemplate = title ? `%s | ${siteMetadata.title}` : `%s`
 
   return (
     <HelmetProvider>
       <Helmet
+        defer={false}
         htmlAttributes={{
           lang,
         }}
@@ -39,8 +47,20 @@ function SEO({ description, lang, meta, title }) {
         titleTemplate={titleTemplate}
         meta={[
           {
+            name: `title`,
+            content: metaTitle,
+          },
+          {
             name: `description`,
             content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            property: `og:url`,
+            content: metaUrl,
           },
           {
             property: `og:title`,
@@ -51,24 +71,28 @@ function SEO({ description, lang, meta, title }) {
             content: metaDescription,
           },
           {
-            property: `og:type`,
-            content: `website`,
+            property: `og:image`,
+            content: metaImage,
           },
           {
             name: `twitter:card`,
-            content: `summary`,
+            content: `summary_large_image`,
           },
           {
-            name: `twitter:creator`,
-            content: site.siteMetadata.author,
+            name: `twitter:url`,
+            content: metaUrl,
           },
           {
             name: `twitter:title`,
-            content: title,
+            content: metaTitle,
           },
           {
             name: `twitter:description`,
             content: metaDescription,
+          },
+          {
+            name: `twitter:image`,
+            content: metaImage,
           },
         ].concat(meta)}
       />
