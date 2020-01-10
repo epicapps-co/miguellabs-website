@@ -34,8 +34,6 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  console.log(data)
-
   const siteMetadata = data.site.siteMetadata
 
   const metaTitle = title || siteMetadata.title
@@ -44,8 +42,6 @@ function SEO({ description, lang, meta, title }) {
   const metaUrl = siteMetadata.url
 
   const metaImage = `${siteMetadata.url}${data.file.childImageSharp.fixed.src}`
-
-  console.log(metaImage)
 
   return (
     <HelmetProvider>
