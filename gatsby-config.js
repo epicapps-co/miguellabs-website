@@ -33,14 +33,15 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        trackingId: `UA-153078710-1`,
-        head: false,
-        anonymize: true,
-      },
-    },
+    // TODO: setup a cookie solution to enable analytics
+    // {
+    //   resolve: `gatsby-plugin-gtag`,
+    //   options: {
+    //     trackingId: `UA-153078710-1`,
+    //     head: false,
+    //     anonymize: true,
+    //   },
+    // },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-transformer-remark`,
