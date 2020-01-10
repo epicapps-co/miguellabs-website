@@ -21,6 +21,14 @@ function SEO({ description, lang, meta, title }) {
             author
             url
             image
+            email
+            phone
+            name
+            legalName
+            streetAddress
+            addressLocality
+            addressRegion
+            postalCode
           }
         }
         file(relativePath: { eq: "social-hero.png" }) {
@@ -34,14 +42,29 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const siteMetadata = data.site.siteMetadata
+  const m = data.site.siteMetadata
 
-  const metaTitle = title || siteMetadata.title
-  const metaDescription = description || siteMetadata.description
-  const titleTemplate = title ? `%s | ${siteMetadata.title}` : `%s`
-  const metaUrl = siteMetadata.url
+  const metaTitle = title || m.title
+  const metaDescription = description || m.description
+  const titleTemplate = title ? `%s | ${m.title}` : `%s`
+  const metaUrl = m.url
 
-  const metaImage = `${siteMetadata.url}${data.file.childImageSharp.fixed.src}`
+  const metaImage = `${m.url}${data.file.childImageSharp.fixed.src}`
+
+  const schemaOrgJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Company",
+    url: m.url,
+    name: m.name,
+    legalName: m.legalName,
+    description: m.description,
+    email: m.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: m.phone,
+      contactType: "Customer Support",
+    },
+  }
 
   return (
     <HelmetProvider>
@@ -102,7 +125,11 @@ function SEO({ description, lang, meta, title }) {
             content: metaImage,
           },
         ].concat(meta)}
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
+      </Helmet>
     </HelmetProvider>
   )
 }

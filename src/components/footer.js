@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
 import { Box } from "./styled"
 
@@ -87,19 +88,41 @@ S.Links = styled.div``
 S.Copyright = styled.div``
 
 export default function Footer() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            email
+            phone
+            legalName
+            streetAddress
+            addressLocality
+            addressRegion
+            postalCode
+          }
+        }
+      }
+    `
+  )
+
+  const m = data.site.siteMetadata
+
   return (
     <S.Footer>
       <S.Box>
         <S.Info>
           <S.Link>
-            <a href="mailto:hello@mmplus.studio">hello@mmplus.studio</a>
+            <a href={`mailto:${m.email}`}>{m.email}</a>
           </S.Link>
           <p>&nbsp;</p>
-          <p>45 Warren St</p>
-          <p>New York, NY 10007</p>
+          <p>{m.streetAddress}</p>
+          <p>
+            {m.addressLocality}, {m.addressRegion} {m.postalCode}
+          </p>
           <p>&nbsp;</p>
           <p>
-            <strong>+1 (917) 930 3135</strong>
+            <strong>{m.phone}</strong>
           </p>
         </S.Info>
         <S.Social>
@@ -117,7 +140,9 @@ export default function Footer() {
           </S.Link>
         </S.Social>
         <S.Bottom>
-          <p>© {new Date().getFullYear()} MMPlus Ltd. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {m.legalName}. All rights reserved.
+          </p>
           {/* <p>
             <a href="/legal">Company legal information</a>
             <span> | </span>

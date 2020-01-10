@@ -5,6 +5,14 @@ module.exports = {
     author: `@mm-plus`,
     url: "https://mmplus.studio",
     image: "/social-hero.png",
+    email: "hello@mmplus.studio",
+    phone: "+1 (917) 930 3135",
+    streetAddress: "45 Warren St",
+    addressLocality: "New York",
+    addressRegion: "NY",
+    postalCode: "10007",
+    name: "MM+",
+    legalName: "MMPlus Inc",
   },
   plugins: [
     {
