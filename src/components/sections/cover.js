@@ -22,7 +22,7 @@ S.Section = styled.section`
     position: absolute;
     left: 50%;
     bottom: 0px;
-    height: 50px;
+    height: 100px;
     width: 4px;
     margin-left: -2px;
     background-color: var(--background-color);
