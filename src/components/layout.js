@@ -8,17 +8,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Footer from "./sections/footer"
+
 import "../css/reset.css"
 import "../css/fonts.css"
 import "../css/vars.css"
 import "../css/layout.css"
-// import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
     <>
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
