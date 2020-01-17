@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Footer from "./footer"
+import Footer from "./sections/footer"
 
 import "../css/reset.css"
 import "../css/fonts.css"

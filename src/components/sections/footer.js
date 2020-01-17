@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Box } from "./styled"
+import { Box } from "../styled"
 
-import sizes from "../global/sizes"
+import sizes from "../../global/sizes"
 
 const S = {}
 S.Footer = styled.footer`
@@ -84,8 +84,6 @@ S.Bottom = styled.div`
     }
   }
 `
-S.Links = styled.div``
-S.Copyright = styled.div``
 
 export default function Footer() {
   const data = useStaticQuery(
@@ -100,6 +98,10 @@ export default function Footer() {
             addressLocality
             addressRegion
             postalCode
+            linkedIn
+            facebook
+            twitter
+            instagram
           }
         }
       }
@@ -127,16 +129,16 @@ export default function Footer() {
         </S.Info>
         <S.Social>
           <S.Link>
-            <a href="/">Linkedin</a>
+            <a href={m.linkedIn}>Linkedin</a>
           </S.Link>
           <S.Link>
-            <a href="/">Facebook</a>
+            <a href={m.facebook}>Facebook</a>
           </S.Link>
           <S.Link>
-            <a href="/">Twitter</a>
+            <a href={m.twitter}>Twitter</a>
           </S.Link>
           <S.Link>
-            <a href="/">Instagram</a>
+            <a href={m.instagram}>Instagram</a>
           </S.Link>
         </S.Social>
         <S.Bottom>
