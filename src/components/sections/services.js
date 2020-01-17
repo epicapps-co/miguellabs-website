@@ -8,6 +8,7 @@ import sizes from "../../global/sizes"
 import iconSearch from "../../assets/svg/search.svg"
 import iconChat from "../../assets/svg/chat.svg"
 import iconCode from "../../assets/svg/code.svg"
+import iconAI from "../../assets/svg/ai.svg"
 
 const S = {}
 S.Section = styled.section`
@@ -30,7 +31,7 @@ S.Section = styled.section`
   }
 `
 S.Box = styled(Box)`
-  grid-template-rows: repeat(3, var(--space-between) auto) var(--space-between);
+  grid-template-rows: repeat(4, var(--space-between) auto) var(--space-between);
 
   @media (max-width: ${sizes.lg}) {
     --space-between: 60vh;
@@ -41,22 +42,13 @@ S.Text = styled(Text)`
   min-width: 0;
   min-height: 0;
 
-  &.left {
-    grid-column: 1/3;
-    text-align: right;
-  }
-
-  &.right {
-    grid-column: 4/6;
-    text-align: left;
-  }
+  grid-row: ${props => props.row};
+  grid-column: ${props => (props.right ? "4/6" : "1/3")};
+  text-align: ${props => (props.right ? "left" : "right")};
 
   @media (max-width: ${sizes.lg}) {
-    &.left,
-    &.right {
-      text-align: center;
-      grid-column: 1/2;
-    }
+    text-align: center;
+    grid-column: 1/2;
   }
 `
 S.Icon = styled.div`
@@ -64,6 +56,7 @@ S.Icon = styled.div`
   position: relative;
   justify-self: center;
   width: 180px;
+  grid-row: ${props => props.row};
 
   & > img {
     position: absolute;
@@ -76,51 +69,31 @@ S.Icon = styled.div`
     grid-column: 1/2;
 
     & > img {
-      transform: translate(0, -200px);
+      transform: translate(${props => (props.up ? "-10px" : "0")}, -200px);
     }
   }
-`
-S.Text1 = styled(S.Text)`
-  grid-row: 2/3;
-`
-S.Icon1 = styled(S.Icon)`
-  grid-row: 2/3;
-
-  @media (max-width: ${sizes.lg}) {
-    & > img {
-      transform: translate(-10px, -200px);
-    }
-  }
-`
-S.Text2 = styled(S.Text)`
-  grid-row: 4/5;
-`
-S.Icon2 = styled(S.Icon)`
-  grid-row: 4/5;
-`
-S.Text3 = styled(S.Text)`
-  grid-row: 6/7;
-`
-S.Icon3 = styled(S.Icon)`
-  grid-row: 6/7;
 `
 
 const Services = () => {
   return (
     <S.Section>
       <S.Box>
-        <S.Text1 className="left" title="service-1"></S.Text1>
-        <S.Icon1 className="left">
+        <S.Text row="2/3" title="service-1"></S.Text>
+        <S.Icon row="2/3" up>
           <img src={iconSearch} alt="Search icon" />
-        </S.Icon1>
-        <S.Text2 className="right" title="service-2"></S.Text2>
-        <S.Icon2 className="right">
+        </S.Icon>
+        <S.Text row="4/5" right title="service-2"></S.Text>
+        <S.Icon row="4/5" right>
           <img src={iconChat} alt="Chat icon" />
-        </S.Icon2>
-        <S.Text3 className="left" title="service-3"></S.Text3>
-        <S.Icon3 className="left">
+        </S.Icon>
+        <S.Text row="6/7" title="service-3"></S.Text>
+        <S.Icon row="6/7">
           <img src={iconCode} alt="Code icon" />
-        </S.Icon3>
+        </S.Icon>
+        <S.Text row="8/9" right title="service-4"></S.Text>
+        <S.Icon row="8/9" right>
+          <img src={iconAI} alt="A.I. icon" />
+        </S.Icon>
       </S.Box>
     </S.Section>
   )
