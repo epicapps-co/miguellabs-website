@@ -5,7 +5,7 @@
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 .HaasGrotesk-55Roman {
@@ -22,7 +22,7 @@
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 .HaasGrotesk-75Bold {
@@ -39,7 +39,7 @@
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 .HaasGrotesk-95Black {

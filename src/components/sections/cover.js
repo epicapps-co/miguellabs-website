@@ -27,6 +27,12 @@ S.Section = styled.section`
     margin-left: -2px;
     background-color: var(--background-color);
   }
+
+  @media (max-height: ${sizes.sm}) {
+    ::after {
+      visibility: hidden;
+    }
+  }
 `
 S.Box = styled(Box)`
   grid-template-rows: auto 1fr;
@@ -47,6 +53,10 @@ S.Text = styled(Text)`
 
   @media (max-width: ${sizes.sm}) {
     grid-column: 1 / 4;
+  }
+
+  @media (max-height: ${sizes.sm}) {
+    padding-bottom: 4rem;
   }
 `
 

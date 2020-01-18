@@ -53,8 +53,8 @@ function SEO({ meta, lang, title, description }) {
       title={metaTitle}
       titleTemplate={titleTemplate}
     >
-      <meta property="title" content={metaTitle} />
-      <meta property="description" content={metaDescription} />
+      <meta name="title" content={metaTitle} />
+      <meta name="description" content={metaDescription} />
 
       <meta property="og:type" content="website" />
       <meta property="og:locale" content={lang} />
