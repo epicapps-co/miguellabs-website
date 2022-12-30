@@ -6,7 +6,7 @@
   "author": "Herc <herc@mmplus.studio>",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.7",
-    "gatsby": "2.21.33",
+    "gatsby": "2.32.13",
     "gatsby-background-image": "0.9.14",
     "gatsby-image": "2.4.3",
     "gatsby-plugin-gtag": "1.0.12",
